@@ -1,5 +1,6 @@
 const ball = document.getElementById('ball');
 const message = document.getElementById('message');
+const startButton = document.getElementById('startButton');
 let startTime;
 
 // Ball an eine zufällige Position bewegen
@@ -12,6 +13,8 @@ function moveBall() {
 
 // Spiel starten
 function startGame() {
+    startButton.style.display = 'none'; // Start-Button ausblenden
+    ball.style.display = 'block'; // Ball anzeigen
     moveBall();
     startTime = new Date();
     message.textContent = "Klicke auf den Ball!";
@@ -22,8 +25,9 @@ ball.addEventListener('click', () => {
     const endTime = new Date();
     const reactionTime = (endTime - startTime) / 1000;
     message.textContent = `Super! Deine Reaktionszeit: ${reactionTime.toFixed(2)} Sekunden.`;
-    setTimeout(startGame, 1000); // Neustart nach 1 Sekunde
+    ball.style.display = 'none'; // Ball ausblenden
+    startButton.style.display = 'block'; // Start-Button anzeigen
 });
 
-// Spiel initial starten
-startGame();
+// Start-Button klicken
+startButton.addEventListener('click', startGame);
