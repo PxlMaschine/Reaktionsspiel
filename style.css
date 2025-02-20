@@ -20,6 +20,22 @@ body {
     position: absolute;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: none; /* Ball ist zunächst versteckt */
+}
+
+#startButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#startButton:hover {
+    background-color: #218838;
 }
 
 #message {
